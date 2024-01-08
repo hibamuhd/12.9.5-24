@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Math Assignment}
+\author{Hiba Muhammed \\
+        EE23BTECH11026}
+\maketitle
+
+\section*{Problem Statement}
+If \(S_1\), \(S_2\), \(S_3\) are the sum of the first \(n\) natural numbers, their squares, and their cubes, respectively, show that 
+
+\[ 9(S\scriptstyle 2)^2 = (S\scriptstyle 3)(1 + 8(S\scriptstyle 1)) \]
+
+\section*{Solution}
+
+\begin{align*}
+    S_1 &= \frac{n(n+1)}{2} \\
+    S_2 &= \frac{n(n+1)(2n+1)}{6} \\
+    S_3 &= \left(\frac{n(n+1)}{2}\right)^2
+\end{align*}
+
+\section*{Input Equations}
+
+\begin{table}[h]
+  \centering
+  \caption{Input Equations}
+  \label{tab:input-equations}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Equation} & \textbf{Expression} \\
+    \hline
+    \(S_1\) & $\frac{n(n+1)}{2}$ \\
+    \(S_2\) & $\frac{n(n+1)(2n+1)}{6}$ \\
+    \(S_3\) & $\left(\frac{n(n+1)}{2}\right)^2$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Now, let's substitute these expressions into the given equation \(9(S_2)^2 = (S_3)(1 + 8(S_1))\) and simplify:
+
+\begin{align*}
+    9\left(\frac{n(n+1)(2n+1)}{6}\right)^2 &= \left(\frac{n(n+1)}{2}\right)^2 \left(1 + 8 \cdot \frac{n(n+1)}{2}\right) \\
+    \frac{9}{36}\left(n(n+1)(2n+1)\right)^2 &= \frac{1}{4}\left(n(n+1)\right)^2 \left(1 + 4n(n+1)\right) \\
+    \frac{1}{4}\left(n(n+1)(2n+1)\right)^2 &= \frac{1}{4}\left(n(n+1)\right)^2 \left(4n(n+1) + 1\right) \\
+    \left(n(n+1)(2n+1)\right)^2 &= \left(n(n+1)\right)^2 \left(4n(n+1) + 1\right) \\
+\end{align*}
+
+The last equation holds true, which verifies that \(9(S_2)^2 = (S_3)(1 + 8(S_1))\) for the given expressions of \(S_1\), \(S_2\), and \(S_3\).
+
+\end{document}
+
