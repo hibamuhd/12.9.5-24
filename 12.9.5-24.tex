@@ -1,0 +1,160 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\system}[1]{\stackrel{#1}{\rightarrow}}
+
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\prt}[2]{\ensuremath{p_{#1}^{\left(#2\right)} }}        % own macro for this question
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\newcommand{\brac}[1]{\left( #1 \right)}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\cond}[2]{#1\middle|#2}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+%\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+    %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand{\myaugvec}[2]{\ensuremath{\begin{amatrix}{#1}#2\end{amatrix}}}
+\providecommand{\rank}{\text{rank}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+    \newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+\providecommand{\diff}[2]{\ensuremath{\frac{d{#1}}{d{#2}}}}
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\newcommand\figref{Fig.~\ref}
+\newcommand\tabref{Table~\ref}
+\newcommand{\sinc}{\,\text{sinc}\,}
+\newcommand{\rect}{\,\text{rect}\,}
+%%
+%   %\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}{\noindent \textbf{Solution: }}
+%\newcommand{\cosec}{\,\text{cosec}\,}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+
+%\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+
+\bibliographystyle{IEEEtran}
+\title{Discreet 12.9.5.24}
+\author{HIBA MUHAMMED\\
+        EE23BTECH11026}
+\maketitle
+
+\section*{Problem Statement}
+If \(S_1\), \(S_2\), \(S_3\) are the sum of the first \(n\) natural numbers, their squares, and their cubes, respectively, show that 
+\[ 9(S\scriptstyle 2)^2 = (S\scriptstyle 3)(1 + 8(S\scriptstyle 1)) \]
+
+\section*{Solution}
+\begin{table}[h]
+  \centering
+  \input{table12.9.5-24.tex}
+  \caption{Input Equations}
+  \label{tab:input-equations}
+\end{table}
+\begin{align}
+    n u\brak{n} &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{\brak{1-z^{-1}}^2} ,   \abs{z} >1 \\
+    x_1\brak{n} &\xleftrightarrow{\mathcal{Z}}X_1(z)\\
+    X_1(z) &= \frac{z^{-1}}{(1-z^{-1})^2}, &|z| > 1 \\
+    y_1(x) &= x_1(n)* u(n)\\
+    Y_1(z) &= X_1(z) \cdot u(z) \\
+    Y_1(z) &= \frac{z^{-1}}{(1-z^{-1})^3} \\
+    y_1(n) &= \frac{\brac{n+1}}{2}\brac{2+n}u(n)\\
+    n^2 u\brak{n} &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3} ,  \abs{z} > 1\\
+    x_2\brak{n} &\xleftrightarrow{\mathcal{Z}}X_2(z)\\
+    X_2(z) &= \frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^3}, &|z| > 1 \\
+    y_2(x) &= x_2(n)* u(n)\\
+    Y_2(z) &= X_2(z) \cdot u(z) \\
+    Y_2(z) &= \frac{z^{-1}(z^{-1}+1)}{(1-z^{-1})^4} \\ 
+    y_2(n) &= \frac{\brac{n+1}\brac{n+2}\brac{2n+3}}{6}u(n) \\
+    n^3 u\brak{n} &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4} ,   \abs{z} >1 \\ 
+    x_3\brak{n} &\xleftrightarrow{\mathcal{Z}}X_3(z)\\
+    X_3(z) &= \frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^4}, &|z| > 1 \\
+    y_3(x) &= x_3(n)* u(n)\\
+    Y_3(z) &= X_3(z) \cdot u(z) \\
+    Y_3(z) &= \frac{z^{-1}(1+4z^{-1}+z^{-2})}{(1-z^{-1})^5}\\
+    y_3(n) &= (\frac{\brac{n+1}\brac{n+2}}{2})^2u(n)
+\end{align} 
+
+\begin{align}
+y_1^2 &= (y_3)(1 + 8(y_1)) &n>=0\\
+\text{LHS} &= 9(y_2)^2 = 9\left(\frac{(n+1)(n+2)(2n+3)}{6}u(n)\right)^2\\
+&= n^6 + 9n^5 + \frac{133}{4}n^4 + \frac{129}{2}n^3 + \frac{277}{4}n^2 + 39n + 9\\
+\text{RHS} &= (y_3)(1 + 8(y_1)) = \left(\frac{(n+1)(n+2)}{2}\right)^2u(n)(1+8\left(\frac{(n+1)(n+2)}{2}\right)u(n)) \\
+&= n^6 + 9n^5 + \frac{133}{4}n^4 + \frac{129}{2}n^3 + \frac{277}{4}n^2 + 39n + 9
+\end{align}
+LHS=RHS
+\[ 9(S_2)^2 = (S_3)(1 + 8(S_1)) \]
+    
+\end{document}
+
